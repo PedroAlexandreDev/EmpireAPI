@@ -1,10 +1,19 @@
 package com.api.jogo.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.util.List;
 
 @Entity
 @Table(name = "empires")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Empire {
 
     @Id
@@ -27,5 +36,4 @@ public class Empire {
     @OneToMany(mappedBy = "attackerEmpire", cascade = CascadeType.ALL)
     private List<Battle> battles;
 
-    // Getters e setters...
 }
