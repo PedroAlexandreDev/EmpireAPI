@@ -18,7 +18,7 @@ public class Empire {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String name;
 
@@ -27,6 +27,10 @@ public class Empire {
     @Embedded
     private Features features;
 
+    @ManyToOne
+    @JoinColumn(name = "player_id")
+    private Player player;
+    
     @OneToMany(mappedBy = "empire", cascade = CascadeType.ALL)
     private List<Building> buildings;
 

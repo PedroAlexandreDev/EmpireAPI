@@ -26,7 +26,7 @@ public class ArmyUnit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Enumerated(EnumType.STRING)
     private ArmyUnitType type;
